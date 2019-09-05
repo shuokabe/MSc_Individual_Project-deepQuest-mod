@@ -16,28 +16,27 @@ This framework has been tested on Microsoft Azure Virtual Machine.
 
 ## Documentation about the original deepQuest
 
-Information about the original deepQuest framework are available on https://github.com/sheffieldnlp/deepQuest and https://sheffieldnlp.github.io/deepQuest.
+Information about the original deepQuest framework is available on https://github.com/sheffieldnlp/deepQuest and https://sheffieldnlp.github.io/deepQuest.
 
 
 ## Documentation
 
-deepQuest-mod can be used as deepQuest, since the background has been kept. New models were however added to incorporate visual features corresponding to the data.
+deepQuest-mod can be used as deepQuest, since its general structure has been kept. New models were however added to incorporate visual features corresponding to the data.
 
-Two QE levels are supported by deepQuest-mod for visual features: sentence-level biRNN model (EncSentVis) and document-level biRNN model (EncDocVis). Both require on top of the usual deepQuest input files, a file containing the visual features, where each line represents one document.
-
+Two QE levels are supported by deepQuest-mod for visual features: sentence-level biRNN model (EncSentVis) and document-level biRNN model (EncDocVis). Both require on top of the usual deepQuest input files, a file containing the visual features (dense vector), where each line represents one document.
 
 
 ### Quick launch files
 
 deepQuest-mod contains two shell scripts facilitating the launching of the models: launch.sh (for document-level QE) and sent-launch.sh (for sentence-level QE).
-Both copies the data files and configuration files from the root folder (one folder before deepQuest) to the folder required by deepQuest.
+Both copy the data files and configuration files from the root folder (one folder before deepQuest) to the folder required by deepQuest.
 
 For example, the following command will prepare the files for a document-level QE biRNN model (EncDoc) where the task name is 'doc-level' and the name of the data is 'doc-qe-data-vis':
 ```
 ./launch.sh --task doc-level --data doc-qe-data-vis
 ```
 
-To launch the same model but with visual features, the command will be:
+In order to launch the same model but with visual features, the command will be:
 ```
 ./launch.sh --task doc-level --data doc-qe-data-vis --vis true
 ```
